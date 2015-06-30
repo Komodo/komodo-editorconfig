@@ -171,4 +171,5 @@ class EditorConfigParser(object):
             raise e
 
     def optionxform(self, optionstr):
-        return optionstr.lower()
+        # KOMODO: Preserve case
+        return optionstr # .lower() 
