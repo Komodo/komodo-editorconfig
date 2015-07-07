@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>editorconfig@activestate.com</em:id>
         <em:name>.editorconfig Support</em:name>
-        <em:version>1.0</em:version>
+        <em:version>1.0.1</em:version>
         <em:description></em:description>
         <em:creator>Nathan Rijksen</em:creator>
         <em:homepageURL>http://www.activestate.com/komodo-ide</em:homepageURL>
