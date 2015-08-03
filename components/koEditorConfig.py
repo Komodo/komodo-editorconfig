@@ -6,13 +6,13 @@
 
 from xpcom.components import interfaces as Ci
 from xpcom.components import classes as Cc
-from editorconfig import get_properties, EditorConfigError
+from editorconfig import get_properties, EditorConfigError, exceptions
 
 import logging
 import json
 
 log = logging.getLogger("editorconfig")
-log.setLevel(10)
+#log.setLevel(10)
 
 class koEditorConfig:
 
