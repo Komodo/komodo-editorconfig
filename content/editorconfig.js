@@ -10,6 +10,8 @@
             ! currentView.koDoc.file || currentView.editorConfigProcessed)
             return;
         
+        if (currentView.getAttribute("type") != "editor") return;
+        
         currentView.editorConfigProcessed = true;
         
         var ec = Cc["@activestate.com/editorconfig/koEditorConfig;1"]
@@ -20,6 +22,7 @@
         try
         {
             var items = ec.get_properties(filepath);
+            if ( ! items) return;
             log.debug("Setting editorconfig: " + items);
             items = JSON.parse(items);
         }
