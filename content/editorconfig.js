@@ -34,10 +34,21 @@
         
         for (let k in items)
         {
-            if (prefs.hasPrefHere(k))
-                continue; // don't set prefs that are already explicitly set
-            
-            prefs.prefObserverService.notifyObservers(prefs, k, items[k]);
+            switch (typeof items[k])
+            {
+                case 'string':
+                    prefs.setStringPref(k, items[k]);
+                    break;
+                case 'boolean':
+                    prefs.setBooleanPref(k, items[k]);
+                    break;
+                case 'number':
+                    prefs.setLongPref(k, items[k]);
+                    break;
+                default:
+                    log.warn("Invalid pref type for: " + k);
+                    break;
+            }
         }
     }
 
